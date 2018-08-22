@@ -37,12 +37,13 @@ public class Employee {
 
 	}
 
-	public Employee(Long employeeId, String firstName, String lastName, int age) {
+	public Employee(Long employeeId, String firstName, String lastName, int age, Long companyId) {
 		super();
 		this.employeeId = employeeId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
+		this.company = new Company(companyId, "", "");
 	}
 
 	public Company getCompany() {

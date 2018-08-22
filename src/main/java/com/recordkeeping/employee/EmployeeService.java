@@ -7,13 +7,11 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.recordkeeping.company.CompanyRepository;
 
 @Service
 public class EmployeeService {
 	
 	@Autowired EmployeeRepository employeeRepository;
-	@Autowired CompanyRepository companyRepository;
 	
 	public List<Employee> getAllEmployees(){
 		List<Employee> employees = new ArrayList<>();
