@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.recordkeeping.company.Company;
-
 @RestController
 public class employeeController {
 	
@@ -29,9 +27,8 @@ public class employeeController {
 		return employeeService.getEmployee(id);
 	}
 
-	@PostMapping("/companies/{companyId}/employees")
-	public Employee saveEmployee(@RequestBody Employee employee, @PathVariable Long companyId){
-		employee.setCompany(new Company(companyId, "", ""));
+	@PostMapping("/employees")
+	public Employee saveEmployee(@RequestBody Employee employee){
 		return employeeService.saveEmployee(employee);
 	}
 	

@@ -28,6 +28,7 @@ public class Employee {
 	
 	@Column(name = "AGE")
 	private int age;
+
 	
 	@ManyToOne
 	@JoinColumn(name="COMPANY_ID")
