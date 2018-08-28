@@ -7,31 +7,32 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.recordkeeping.company.CompanyRepository;
+import com.recordkeeping.employee.GET.EmployeeGet;
+import com.recordkeeping.employee.GET.EmployeeGetRepository;
 
 @Service
 public class EmployeeService {
 	
 	@Autowired EmployeeRepository employeeRepository;
-	@Autowired CompanyRepository companyRepository;
+	@Autowired EmployeeGetRepository employeeGetRepository;
 	
-	public List<Employee> getAllEmployees(){
-		List<Employee> employees = new ArrayList<>();
+	public List<EmployeeGet> getAllEmployees(){
+		List<EmployeeGet> employees = new ArrayList<>();
 		
-		employeeRepository.findAll().forEach(employees::add);
+		employeeGetRepository.findAll().forEach(employees::add);
 		
 		return employees;
 	}
 	
-	public Optional<Employee> getEmployee(Long id) {
-		return employeeRepository.findById(id);
+	public Optional<EmployeeGet> getEmployee(Long id) {
+		return employeeGetRepository.findById(id);
 	}
 	
 	public Employee saveEmployee(Employee employee){
 		return employeeRepository.save(employee);
 	}
 
-	public List<Employee> deleteEmployee(Long id) {
+	public List<EmployeeGet> deleteEmployee(Long id) {
 		employeeRepository.deleteById(id);
 		return getAllEmployees();
 	}

@@ -1,45 +1,35 @@
-package com.recordkeeping.employee;
+package com.recordkeeping.employee.GET;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
+import com.recordkeeping.company.Company;
 
 @Entity
-@Table(name = "employees")
-public class Employee {
+public class EmployeeGet {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name = "EMPLOYEE_ID")
 	private Long employeeId;
 	
-	@Column(name = "FIRST_NAME")
 	private String firstName;
 	
-	@Column(name = "LAST_NAME")
 	private String lastName;
 	
-	@Column(name = "AGE")
 	private int age;
 	
-	@Column(name="COMPANY_ID")
-	private Long companyId;
+	Company company;
 	
-	public Employee() {
+	public EmployeeGet() {
 
 	}
 
-	public Employee(Long employeeId, String firstName, String lastName, int age, Long companyId) {
+	public EmployeeGet(Long employeeId, String firstName, String lastName, int age, Company company) {
 		super();
 		this.employeeId = employeeId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
-		this.companyId = companyId;
+		this.company = company;
 	}
 
 	public Long getEmployeeId() {
@@ -73,5 +63,15 @@ public class Employee {
 	public void setAge(int age) {
 		this.age = age;
 	}
+
+	public Company getCompany() {
+		return company;
+	}
+
+	public void setCompany(Company company) {
+		this.company = company;
+	}
+	
+	
 
 }

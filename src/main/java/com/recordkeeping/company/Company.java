@@ -1,17 +1,17 @@
 package com.recordkeeping.company;
 
-import java.util.ArrayList;
-import java.util.Collection;
+//import java.util.ArrayList;
+//import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+//import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.recordkeeping.employee.Employee;
+//import com.recordkeeping.employee.Employee;
 
 @Entity
 @Table(name="companies")
@@ -28,8 +28,7 @@ public class Company {
 	@Column(name="COUNTRY")
 	private String country;
 	
-	@OneToMany(mappedBy="company")
-	private Collection<Employee> employees = new ArrayList<Employee>();
+//	private Collection<Employee> employees = new ArrayList<Employee>();
 
 	public Company() {
 

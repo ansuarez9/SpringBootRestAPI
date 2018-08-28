@@ -12,21 +12,20 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.recordkeeping.company.CompanyRepository;
+import com.recordkeeping.employee.GET.EmployeeGet;
 
 @RestController
 public class employeeController {
 	
 	@Autowired EmployeeService employeeService;
-	@Autowired CompanyRepository companyRepository;
 	
 	@GetMapping("/employees")
-	public List<Employee> getAllEmployees(){
+	public List<EmployeeGet> getAllEmployees(){
 		return employeeService.getAllEmployees();
 	}
 	
 	@GetMapping("/employees/{id}")
-	public Optional<Employee> getEmployee(@PathVariable Long id) {
+	public Optional<EmployeeGet> getEmployee(@PathVariable Long id) {
 		return employeeService.getEmployee(id);
 	}
 
@@ -41,7 +40,7 @@ public class employeeController {
 	}
 	
 	@DeleteMapping("/employees/{id}")
-	public List<Employee> deleteEmployee(@PathVariable Long id){
+	public List<EmployeeGet> deleteEmployee(@PathVariable Long id){
 		return employeeService.deleteEmployee(id);
 	}
 }
